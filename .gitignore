@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+conf/config.yaml
+data/
+output/
+log/
+prompt*/
+*.html
+*.jsonl
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+AGENTS.md

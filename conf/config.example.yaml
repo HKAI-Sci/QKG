@@ -1,0 +1,28 @@
+llm_roles:
+  reasoner: openrouter_reasoner
+  validator: aws_validator
+
+llm_backends:
+  openrouter_reasoner:
+    provider: openrouter
+    base_url: https://openrouter.ai/api/v1
+    api_key: ${OPENROUTER_API_KEY}
+    model: openai/gpt-4o-mini
+
+  aws_validator:
+    provider: aws
+    model: anthropic.claude-3-5-sonnet-20241022-v2:0
+    aws_region: us-east-1
+    aws_access_key_id: ${AWS_ACCESS_KEY_ID}
+    aws_secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+
+mongo:
+  primekg_uri: mongodb://localhost:27017/primeKG
+  umls_uri: mongodb://localhost:27017/umls_test
+
+paths:
+  primekg_csv: /absolute/path/to/PrimeKg.csv
+  umls_mrconso_rrf: /absolute/path/to/MRCONSO.RRF
+  relation_with_facts_jsonl: /absolute/path/to/relation_facts_all_cleaned.jsonl
+  primekg_entities_jsonl: /absolute/path/to/qkg-primekg-entities-with-cui.jsonl
+  qa_eval_jsonl: /absolute/path/to/top_2875_path_samples_all_v4.jsonl

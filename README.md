@@ -1,4 +1,4 @@
-# Quan
+# Quantum Knowledge Graph (QKG): Modeling Context-Dependent Triplet Validity
 
 QKG is the public codebase for reproducing the paper’s question-guided knowledge graph inference workflow on MedReason-derived medical QA data.
 
@@ -29,18 +29,20 @@ There are two groups of required data.
 ### 2. Datasets Published By QKG
 
 3. `qkg-primekg-entities-with-cui`
-   - published by us
-   - available as JSONL and Mongo dump
+   - published by us at https://huggingface.co/datasets/wangyaobupt/qkg-primekg-entities-with-cui
+   - available as JSONL
 4. `qkg-relation-with-facts`
-   - published by us
-   - available as JSONL and Mongo dump
+   - published by us at https://huggingface.co/datasets/wangyaobupt/qkg-relation-with-facts
+   - available as JSONL
 5. `qkg-medreason-eval.jsonl`
-   - published by us
+   - TODO: published by us
    - evaluation dataset consumed by `conditionKgTestAgentic.py`
 
 ## Quickstart
 
 ### 1. Create an environment
+
+Use Python 3.11.
 
 ```bash
 python -m venv .venv
@@ -83,6 +85,7 @@ mongo:
 
 paths:
   primekg_csv: /absolute/path/to/PrimeKg.csv
+  umls_mrconso_rrf: /absolute/path/to/MRCONSO.RRF
   primekg_entities_jsonl: /absolute/path/to/qkg-primekg-entities-with-cui.jsonl
   relation_with_facts_jsonl: /absolute/path/to/qkg-relation-with-facts.jsonl
   qa_eval_jsonl: /absolute/path/to/qkg-medreason-eval.jsonl
@@ -91,21 +94,31 @@ paths:
 
 ## Load Data Into MongoDB
 
-The runtime expects these Mongo collections:
+The runtime expects four Mongo collections:
 
-- `primeKG.relations`: the upstream PrimeKG relation graph loaded from official `PrimeKg.csv`
-- `primeKG.entities`: the QKG-published PrimeKG entity table with CUI annotations
-- `primeKG.relation_with_facts`: the QKG-published patient-sensitive relation annotation table
-- `umls_test.umls_strings_raw_test`: the official UMLS string table used for synonym / abbreviation fallback in `search_entity`
+- `primeKG.relations`
+- `primeKG.entities`
+- `primeKG.relation_with_facts`
+- `umls_test.umls_strings_raw_test`
 
-### Recommended Path: Restore Mongo Dumps
+Collection purpose and field summaries are in [docs/resource-mongo.md](docs/resource-mongo.md).
 
-If you downloaded the published Mongo dump artifacts, restore them directly:
+### Load QKG JSONL Artifacts
+
+For the `mongoimport` command, export your PrimeKG Mongo URI first:
 
 ```bash
-mongorestore --uri "$QKG_PRIMEKG_MONGO_URI" --nsInclude="primeKG.entities" /path/to/qkg-primekg-entities-with-cui.mongodump
-mongorestore --uri "$QKG_PRIMEKG_MONGO_URI" --nsInclude="primeKG.relation_with_facts" /path/to/qkg-relation-with-facts.mongodump
+export QKG_PRIMEKG_MONGO_URI="mongodb://localhost:27017/primeKG"
 ```
+
+```bash
+mongoimport --uri "$QKG_PRIMEKG_MONGO_URI" --db primeKG --collection entities --file /path/to/qkg-primekg-entities-with-cui.jsonl
+python tools/import_relation_facts.py
+```
+
+The first command loads the published `qkg-primekg-entities-with-cui.jsonl` artifact into `primeKG.entities`.
+
+The second command loads `paths.relation_with_facts_jsonl` into `primeKG.relation_with_facts`.
 
 Then load the two official upstream dependencies:
 
