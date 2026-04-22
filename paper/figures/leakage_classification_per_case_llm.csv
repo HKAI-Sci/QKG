@@ -1,0 +1,382 @@
+run_label,sample_key,reasoner_answer,final_answer,gold_answer,regex_label,of_which_context_driven,llm_label,llm_reasoning,final_label,label_source
+"KG w/o context (Qwen V, no patient context)",qa_6913,D,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_3443,B,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2790,D,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_3387,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_5165,C,A,A,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The decisive evidence rests on the validator's own biochemical knowledge about toxin mechanisms (glucosyltransferase vs ADP-ribosyltransferase activity) with no citation to a specific KG entity, relation, or patient-context annotation.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",qa_9542,B,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_8126,A,C,C,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_8040,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",huatuo_7560,C,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_7817,B,A,A,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The evidence asserts that pseudosulcus is a 'classic and highly specific clinical sign of LPR' and that 'LPR is the primary etiology' based on clinical knowledge, with no citation to a specific KG edge, relation, or patient-context annotation.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",qa_4472,B,A,A,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",qa_3960,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_7053,C,D,D,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",qa_8801,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2227,A,C,C,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_704,F,G,G,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_2095,B,D,D,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The decisive evidence rests on clinical knowledge assertions about sickle cell disease pathophysiology (glomerular hyperfiltration, sickling-induced ischemia, podocyte injury, medullary sickling) and typical presentation patterns (nephrotic syndrome vs. episodic gross hematuria), with no specific KG entity, relation, or edge cited to ground these contradictions.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",huatuo_1715,C,E,E,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_6609,B,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_7276,A,C,C,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",medqa_7541,C,B,B,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The decisive evidence rests on the validator's own clinical knowledge of crystal optics and pathology (monosodium urate vs. calcium pyrophosphate birefringence properties) with no KG entity, relation, or edge cited as the basis for the contradiction.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",qa_8901,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_960,D,C,C,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_1267,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_6592,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_649,C,I,I,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",qa_6324,C,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",medqa_5586,A,C,C,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",qa_6340,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_8476,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_555,E,I,I,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The decisive evidence rests entirely on osteopathic biomechanical principles and clinical reasoning about chronic ligamentous laxity patterns with no citation of a KG edge, relation, or structured knowledge base—phrases like 'classic osteopathic biomechanical sign' and 'somatic dysfunction' reflect the validator's own clinical/specialty knowledge rather than KG-grounded facts.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",qa_2632,A,B,B,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_7043,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_8829,A,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_9226,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2801,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_538,D,F,F,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_7561,D,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2631,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2695,D,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",huatuo_4533,D,C,C,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"All three decisive evidence strings explicitly cite KG-supported pathophysiological distinctions (TB causes constrictive pericarditis vs. restrictive cardiomyopathy; KG phenotypes for TB; pericardial fibrosis vs. infiltrative cardiomyopathy) and reference specific clinical-radiological patterns (low-voltage QRS, LVH, macroglossia) that are grounded in knowledge-graph entity relationships and differential diagnosis logic.",LIKELY_KG_SUPPORTED,llm
+"KG w/o context (Qwen V, no patient context)",medqa_6710,C,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_8508,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_8963,A,B,B,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",huatuo_7592,B,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2290,B,A,A,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"The evidence explicitly cites 'KG data for Gentamicin' and grounds the contradiction in specific mechanistic facts (30S inhibitor, vestibulotoxicity) that are verifiable KG entities and relations.",LIKELY_KG_SUPPORTED,llm
+"KG w/o context (Qwen V, no patient context)",qa_8583,C,D,D,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The decisive evidence rests on clinical pattern recognition (target lesions as characteristic of Erythema Multiforme, Mycoplasma pneumoniae as a classic trigger) and differential dermatological knowledge with no KG entity or relation citations provided.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_544,C,F,F,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_1047,C,B,B,UNCLASSIFIED,False,LIKELY_LEAKAGE,"Both decisive evidence strings rest on stated physiological principles (renal compensation mechanisms, acid-base balance) with no citation of any KG entity, relation, or patient-context annotation—the validator is applying its own clinical knowledge to contradict the reasoner's choices.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",qa_2752,C,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",medqa_690,B,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_1951,C,A,A,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",qa_1286,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_5471,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_6954,D,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_1066,B,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2142,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_4034,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_7331,B,C,C,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_2514,A,D,D,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",qa_3400,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_5664,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",huatuo_8239,C,B,B,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The evidence asserts clinical pathophysiology ('dysfunctional platelet aggregation is the primary and sufficient mechanism for uremic bleeding') and interprets lab findings without citing any specific KG edge or relation, relying instead on the validator's own medical reasoning about hemostasis mechanisms.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_533,I,J,J,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_5278,B,C,C,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",medqa_5926,C,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",medqa_310,D,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_158,C,D,D,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"Both decisive claims explicitly cite KG entity searches and established biochemical pathways (B12 as cofactor for methylmalonyl-CoA mutase, folate's role in homocysteine remethylation) to ground the contradiction between B12 deficiency versus folate deficiency based on MMA levels.",LIKELY_KG_SUPPORTED,llm
+"KG w/o context (Qwen V, no patient context)",qa_1861,C,D,D,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_307,D,E,E,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_922,I,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_3000,A,B,B,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The decisive evidence rests on clinical knowledge assertions about bone lesion phenotypes (osteoblastic vs. lytic) and CRAB criteria for multiple myeloma, with no specific KG entity, relation, or applicability annotation cited—only a vague reference to 'KG phenotype queries' that did not return results, which is insufficient grounding.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_598,F,J,J,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_7942,B,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_4181,A,C,C,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_314,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_6009,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_1419,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_1216,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2150,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_5613,A,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_7801,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2027,C,B,B,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_5466,C,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",medqa_6953,C,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",medqa_6727,B,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_643,D,G,G,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_8277,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_6294,D,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_5918,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_8426,D,B,B,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The contradiction rests on the validator's clinical knowledge that hepatitis A vaccine is inactivated (not live attenuated) and general obstetric safety principles for inactivated vaccines in pregnancy, with no KG entity or relation cited as the basis.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_984,F,J,J,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2832,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_4934,B,C,C,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_5730,B,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",medqa_63,B,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2094,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_985,G,E,E,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_6385,D,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_6216,C,A,A,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",qa_8010,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_4743,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_7678,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_7402,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_428,C,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_7635,B,A,A,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The evidence rests on the validator's clinical knowledge that 'ptosis is a cardinal sign of CN III palsy due to levator palpebrae superioris denervation' and that it 'would almost certainly reveal' on further evaluation, with no KG entity, relation, or patient-context annotation cited to support this contradiction.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",qa_2241,A,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_7449,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2182,E,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_4345,B,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_3,C,I,I,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_9389,A,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_8982,B,A,A,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"Both decisive evidence strings explicitly cite KG anatomy data: the first references the anatomically correct synaptic pathway (pretectal nucleus → Edinger-Westphal nucleus) and the second directly invokes 'KG anatomy data confirms the LGN's role as a key visual pathway relay center,' making the contradiction grounded in knowledge-graph entities and relations.",LIKELY_KG_SUPPORTED,llm
+"KG w/o context (Qwen V, no patient context)",qa_6357,B,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_761,J,I,I,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_5180,C,B,B,UNCLASSIFIED,False,LIKELY_LEAKAGE,"Both decisive evidence strings assert specific physiological mechanisms (Na-Cl cotransporter effects, calcium reabsorption in DCT) and clinical outcomes without citing any KG entity, relation, or patient-context annotation, relying instead on parametric medical knowledge.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",qa_3643,B,C,C,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_2615,A,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_7941,D,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_1598,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_3871,C,D,D,UNCLASSIFIED,False,LIKELY_LEAKAGE,"Both decisive evidence strings rely on parametric pharmacological assertions ('rifampin does NOT intercalate', 'metronidazole shares free radical-mediated DNA damage') without citing specific KG edges or patient-context annotations; the validator invokes 'standard pharmacology and board-style question patterns' and 'clinical MOA' as authority rather than grounding contradictions in KG data.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",medqa_508,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2140,D,C,C,UNCLASSIFIED,False,MIXED,"The evidence cites KG contraindications ('KG listed contraindications for KCl in conditions like renal failure and hyperkalemia') but then pivots to clinical protocol knowledge ('standard DKA protocols', 'IV potassium replacement is explicitly indicated') to override the KG's silence on normokalemic DKA, combining both KG-grounded and leakage-based reasoning.",MIXED,llm
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_911,G,E,E,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_143,D,A,A,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"Both decisive evidence strings explicitly cite KG links: the first states 'KG evidence links Beckwith-Wiedemann syndrome to the exact constellation of physical findings' and the second states 'the KG directly links [Beckwith-Wiedemann syndrome] to neonatal hypoglycemia,' making the contradiction entirely KG-grounded with no clinical leakage.",LIKELY_KG_SUPPORTED,llm
+"KG w/o context (Qwen V, no patient context)",qa_1040,B,C,C,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"Both decisive evidence strings explicitly cite specific KG entities (NR3C2 receptor, principal cells of collecting duct) and their known physiological locations/functions to contradict the incorrect DCT claim and support the correct collecting duct answer.",LIKELY_KG_SUPPORTED,llm
+"KG w/o context (Qwen V, no patient context)",medmcqa_3459,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_8726,A,D,D,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"The evidence explicitly cites 'KG strongly links sarcoidosis to the exact symptom cluster' and references a specific KG-supported clinical pattern (Löfgren syndrome), grounding the contradiction in knowledge-graph entity relations rather than the validator's independent clinical reasoning.",LIKELY_KG_SUPPORTED,llm
+"KG w/o context (Qwen V, no patient context)",medqa_5392,A,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_991,D,C,C,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The evidence rests on clinical knowledge that 'unilateral wheezing is a classic red flag' and that 'bronchoscopy is actually the most appropriate next step' based on medical reasoning about endobronchial pathology, with no KG entity, relation, or patient-context annotation cited to support the contradiction.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",qa_6259,A,C,C,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2194,A,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_4989,A,D,D,UNCLASSIFIED,False,LIKELY_LEAKAGE,"Both decisive evidence strings rely on 'established pharmacology' and 'established evidence' assertions about corticosteroid mechanisms (downregulation of adhesion molecules) without citing specific KG edges or relations, indicating the validator applied its own clinical knowledge rather than KG-grounded contradictions.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",qa_5302,B,A,A,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The validator contradicts option B using clinical knowledge about GTT pathophysiology (hCG-driven, self-limiting, resolves spontaneously) and management principles (beta-blockers and hydration sufficient), with no citation to a specific KG edge, relation, or patient-context annotation.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",medqa_4917,B,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_6771,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_306,A,E,E,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_717,A,G,G,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_1781,C,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_1684,A,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_8203,C,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_756,E,G,G,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",medqa_7555,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_4151,B,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2554,A,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_9009,B,A,A,UNCLASSIFIED,False,MIXED,"The evidence explicitly acknowledges a KG gap ('KG lacks a specific entity') but then pivots to medical knowledge assertions ('Medical knowledge contradicts...corticosteroids are not the standard treatment'), combining both KG-supported reasoning and leakage-based clinical knowledge.",MIXED,llm
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_327,F,D,D,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The evidence rests on clinical knowledge that misoprostol is 'well-established, effective' for acute PPH in contraindicated scenarios, with no specific KG entity, relation, or patient-context annotation cited to support this contradiction.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",MMLU_1047,B,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_1209,B,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_908,A,J,J,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_8157,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2796,B,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2064,D,B,B,UNCLASSIFIED,False,LIKELY_LEAKAGE,"Both decisive evidence strings rest on the validator's own clinical knowledge of otologic physiology and tuning fork interpretation (AC vs BC relationships, Weber lateralization patterns in SNHL) with no citation of any KG entity, relation, or patient-context annotation.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",qa_7723,C,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_1295,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_3413,B,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_4827,D,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_2074,B,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_394,A,J,J,UNCLASSIFIED,False,LIKELY_LEAKAGE,"Both decisive evidence strings rely on clinical pattern recognition ('classic signs', 'pathognomonic for MEN1 syndrome') and medical reasoning about syndrome associations without citing any specific KG edges, relations, or patient-context annotations.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",medqa_954,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_1523,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_1979,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_3487,C,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_638,H,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_5488,C,D,D,UNCLASSIFIED,False,MIXED,"The evidence cites both a KG gap ('The KG does not support an antibiotics-first sequence') and an appeal to clinical protocol knowledge ('clinical protocols universally mandate airway stabilization'), making it a combination of KG-supported absence and leakage-based guideline assertion.",MIXED,llm
+"KG w/o context (Qwen V, no patient context)",qa_1878,D,C,C,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_4842,A,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_2275,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",pubmedqa_artificial_4145,B,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_1134,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_1394,B,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_8039,D,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_917,C,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",huatuo_7878,E,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_3982,A,D,D,MIXED,False,,,MIXED,regex
+"KG w/o context (Qwen V, no patient context)",qa_3626,D,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_8955,A,B,B,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2064,D,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1734,A,C,C,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6259,A,C,C,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The validator's contradiction rests on clinical pattern recognition ('classic for allergic contact dermatitis') and differential diagnosis reasoning based on patient history (hiking in NC), with no citation of a KG entity, relation, or safety annotation.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",medqa_4181,A,C,C,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1216,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_314,A,B,B,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1419,C,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2150,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_6009,C,B,B,UNCLASSIFIED,False,LIKELY_LEAKAGE,The decisive evidence rests on the validator's clinical knowledge that 'uremic toxins impair platelet adhesion and aggregation via von Willebrand factor dysfunction' and that uremic platelet dysfunction is 'the hallmark bleeding etiology in advanced CKD'—assertions about pathophysiology and clinical patterns stated without citation to a specific KG edge or entity.,LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_704,F,G,G,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The evidence rests on clinical reasoning about SIBO pathophysiology (negative stool studies don't rule it out, classic triad of diabetes + dysmotility + B12/folate pattern) and off-label drug use knowledge, with no KG entity or relation cited to support the contradiction.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",qa_4743,A,B,B,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6609,B,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_428,C,D,D,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The decisive evidence rests on the validator's assertion of 'standard anatomical and osteopathic landmarks' and 'classic anatomical landmark' knowledge without citing any specific KG entity, relation, or structured knowledge-graph edge—this is pure parametric clinical-anatomical knowledge applied directly.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",qa_5278,B,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_5613,A,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_5926,C,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_5466,C,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_3,C,I,I,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_4287,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2027,C,B,B,UNCLASSIFIED,False,LIKELY_LEAKAGE,"Both decisive evidence strings rest on clinical pathophysiology assertions (ketosis-driven GI symptoms in DKA vs. hyperosmolality-driven seizures in HHS) with no citation to specific KG edges, relations, or patient-context annotations, representing the validator's own medical knowledge rather than KG-grounded contradictions.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",qa_9389,A,C,C,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_6902,A,C,C,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_307,D,E,E,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_643,D,G,G,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_5918,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8277,C,D,D,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6324,C,A,A,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1554,C,A,A,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"The contradiction rests explicitly on a KG relation between Acyclovir (14237) and Herpes simplex encephalitis (33127) that specifies 'requires early initiation without delaying diagnostics', which is a direct entity-relation edge citation.",LIKELY_KG_SUPPORTED,llm
+"QKG w/ context (Qwen V, with patient context)",medqa_5471,C,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2632,A,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2094,C,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_6954,D,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_9314,B,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_922,I,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2242,A,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_960,D,C,C,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"The decisive evidence explicitly cites 'KG data links endometriosis, not adenomyosis, to the patient's specific phenotype cluster,' grounding the contradiction in a specific knowledge-graph relation between clinical phenotype and diagnosis.",LIKELY_KG_SUPPORTED,llm
+"QKG w/ context (Qwen V, with patient context)",medqa_7402,A,B,B,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The decisive contradiction rests on biostatistical reasoning and explicit question wording ('how many cases of cardiovascular death would be prevented?'), not on any KG entity or relation—the validator applies clinical/methodological knowledge to override the Reasoner's NNT-based pivot.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",qa_9542,B,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_5302,B,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_306,A,E,E,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_984,F,J,J,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2095,B,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3949,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2832,A,D,D,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The evidence rests on clinical pattern recognition ('classic for Hydralazine-induced lupus') and pharmacology literature knowledge ('widely described in pharmacology literature') rather than citation of a specific KG entity, relation, or patient-context-conditioned applicability annotation.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",medqa_4934,B,C,C,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_5730,B,D,D,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The decisive evidence rests on clinical knowledge about diagnostic criteria (AST/ALT ratios, alcohol consumption thresholds of >20-30g/day, metabolic syndrome patterns) and guideline-based differential diagnosis reasoning, with no KG entity or relation citations provided.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",medqa_4989,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_5586,A,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6340,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8203,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1295,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2092,A,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_7276,A,C,C,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1209,B,D,D,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_7053,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2856,E,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2227,A,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2796,B,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1134,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_7541,C,B,B,UNCLASSIFIED,False,LIKELY_LEAKAGE,"Both decisive evidence strings rest on the validator's own rheumatology knowledge about crystal birefringence properties (negative vs. positive, needle vs. rhomboid shapes), with explicit acknowledgment that 'the KG does not explicitly encode crystal optical properties,' indicating the contradiction is grounded in clinical knowledge outside the knowledge graph rather than KG-supported facts.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",medqa_954,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6592,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1878,D,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_601,D,H,H,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_334,A,H,H,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The evidence asserts the definitive pathophysiologic mechanism of neurocysticercosis transmission (fecal-oral route of T. solium eggs) and distinguishes intestinal vs. CNS disease without citing a specific KG edge or patient-context annotation, relying instead on stated medical/parasitologic knowledge.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",huatuo_1715,C,E,E,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The contradiction rests on the validator's own clinical knowledge of dynamic auscultation principles (HCM murmurs increase with standing, innocent murmurs decrease) with no KG entity, relation, or patient-context annotation cited as the basis.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",medqa_7044,B,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_7941,D,C,C,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_227,H,G,G,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2760,B,C,C,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_865,H,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3902,B,D,D,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8039,D,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2388,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1267,A,B,B,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8955,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_6608,D,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6357,B,D,D,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6568,B,A,A,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1598,C,A,A,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_508,C,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2494,B,C,C,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_163,B,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_7653,A,D,D,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1040,B,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1781,C,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2615,A,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_7555,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8126,A,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8067,B,A,A,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_717,A,G,G,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2290,B,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_300,A,B,B,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_5165,C,A,A,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"The evidence cites specific molecular mechanisms (glucosyltransferase vs. ADP-ribosyltransferase) and contrasts C. difficile toxins with established KG relations (Cholera toxin and E. coli heat-labile toxin mechanisms), grounding the contradiction in precise biochemical knowledge-graph entities and their properties.",LIKELY_KG_SUPPORTED,llm
+"QKG w/ context (Qwen V, with patient context)",MMLU_1047,B,D,D,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8963,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",huatuo_7322,A,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3871,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_143,D,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_5268,A,D,D,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,The evidence explicitly cites KG drug_effect relations for diclofenac and uses pathognomonic clinical findings (RBC casts and acanthocytes) as KG-grounded differential criteria to distinguish glomerular disease from NSAID-induced AIN.,LIKELY_KG_SUPPORTED,llm
+"QKG w/ context (Qwen V, with patient context)",qa_1505,D,C,C,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8829,A,C,C,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2801,C,D,D,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2631,A,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2695,D,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",huatuo_4533,D,C,C,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"All three decisive evidence strings explicitly cite specific KG entities (TB phenotypes 32505, pericardial TB 97194) and their documented relations/associations, directly contradicting option D by showing what the KG does and does not link to TB.",LIKELY_KG_SUPPORTED,llm
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_538,D,F,F,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3559,D,A,A,UNCLASSIFIED,False,LIKELY_LEAKAGE,The evidence cites KG phenotypes but the decisive clinical assertions—that 'empiric antibiotics should be withheld until biopsy cultures are obtained' and that blood cultures are 'only positive in ~50% of cases'—are stated as clinical/guideline knowledge without reference to a specific KG edge or patient-context-conditioned applicability annotation supporting this management recommendation.,LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",medqa_6710,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8583,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_5493,B,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",huatuo_7878,E,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_6719,B,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1066,B,C,C,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"Both decisive evidence strings cite specific, verifiable knowledge-graph entities: the MEN1 gene location on chromosome 11q13 and the RET proto-oncogene location on chromosome 10q11.2, which are factual genomic mappings that would be grounded in a medical knowledge graph.",LIKELY_KG_SUPPORTED,llm
+"QKG w/ context (Qwen V, with patient context)",qa_3978,D,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2142,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_4034,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3400,C,D,D,MIXED,True,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",huatuo_8239,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2514,A,D,D,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The contradiction rests on the validator's own physiological knowledge that 'CCK causes relaxation of the sphincter of Oddi' with no KG entity, relation, or patient-context annotation cited as the basis for this assertion.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",medqa_7331,B,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3413,B,A,A,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_4842,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1861,C,D,D,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_310,D,A,A,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3000,A,B,B,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The decisive evidence rests on the validator's own clinical knowledge that 'prostate cancer bone metastases are characteristically osteoblastic, not osteolytic' and that 'lytic lesions + triad is classically suggestive of multiple myeloma (CRAB criteria)', with no KG entity or relation cited to ground these pathophysiologic and diagnostic assertions.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",qa_3387,C,B,B,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_598,F,J,J,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_6727,B,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6913,D,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_6953,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_985,G,E,E,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8010,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_7447,A,D,D,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_627,B,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2241,A,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",huatuo_1652,B,A,A,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2182,E,B,B,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2194,A,C,C,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6771,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2862,A,D,D,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_4151,B,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_756,E,G,G,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2554,A,C,C,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"The decisive evidence for rejecting option A explicitly cites KG annotations ('KG annotations for spironolactone specifically recommend it for NYHA class III/IV heart failure with LVEF ≤35%') and the evidence for supporting option C grounds the contradiction in trial inclusion criteria and patient-context matching against those criteria, both of which are KG-supported applicability determinations.",LIKELY_KG_SUPPORTED,llm
+"QKG w/ context (Qwen V, with patient context)",medqa_7449,A,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1619,A,C,C,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_208,B,C,C,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_5488,C,D,D,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2162,A,C,C,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1394,B,D,D,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The evidence rests on clinical teratology knowledge and epidemiological associations ('Clinical teratology resources and epidemiological studies strongly associate pregestational diabetes with conotruncal defects') rather than citing a specific KG entity, relation, or patient-context-conditioned annotation.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",qa_2074,B,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1523,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_394,A,J,J,UNCLASSIFIED,False,LIKELY_LEAKAGE,"Both decisive claims rest on clinical pattern recognition (galactorrhea + headaches + hypoglycemia → MEN1/prolactinoma) and differential diagnosis reasoning (ruling out factitious disorder via occupation distractor) without citing specific KG edges, relations, or patient-context annotations.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",qa_3960,A,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_7043,A,D,D,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2275,A,D,D,MIXED,True,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8801,A,D,D,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_62,B,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_142,A,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_4827,D,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_5427,D,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_9226,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8040,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6147,C,D,D,UNCLASSIFIED,False,LIKELY_LEAKAGE,"Both decisive claims rest on clinical/mechanistic knowledge (muscle cramping from rapid fluid shifts in HD, glucose absorption stimulating VLDL synthesis in PD) with explicit acknowledgment that KG searches returned no relevant dialysis-specific edges, indicating the validator is applying parametric medical knowledge rather than KG-grounded evidence.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",qa_2100,A,C,C,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_11449,B,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1286,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3982,A,D,D,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6505,B,C,C,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8476,A,B,B,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3040,D,A,A,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_9009,B,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",medmcqa_3459,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8157,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_6011,B,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_4947,B,C,C,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1684,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_363,A,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_7942,B,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_5664,C,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3487,C,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_4357,B,C,C,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The evidence rests on 'established treatment algorithms' and 'standard-of-care' clinical practice without citing any specific KG entity, relation, or patient-context annotation; it is a pure parametric assertion of guideline-based medical knowledge.",LIKELY_LEAKAGE,llm
+"QKG w/ context (Qwen V, with patient context)",qa_2737,C,A,A,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"All three decisive evidence strings explicitly cite KG associations between Kallmann syndrome and 'Hypothalamic gonadotropin-releasing hormone deficiency', which directly grounds the contradiction of Option C's claim of increased GnRH and supports Option A's correct hormone profile.",LIKELY_KG_SUPPORTED,llm
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_533,I,J,J,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3443,B,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2790,D,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_140,A,G,G,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_34,A,C,C,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6294,D,A,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_539,F,I,I,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8426,D,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_542,F,B,B,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8452,B,C,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_7817,B,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2096,C,A,A,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3898,B,C,C,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2202,B,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1951,C,A,A,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_318,C,D,D,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_7723,C,D,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6385,D,C,C,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"The evidence explicitly cites KG restrictions on methotrexate indication ('KG does not support methotrexate as the initial next step'; 'its indication is restricted to gestational trophoblastic neoplasia') and contrasts this with the KG-supported standard intervention (suction curettage), making the contradiction grounded in specific KG entity/relation edges.",LIKELY_KG_SUPPORTED,llm
+"QKG w/ context (Qwen V, with patient context)",qa_6216,C,A,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_7678,C,B,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_5180,C,B,B,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex

@@ -1,6 +1,9 @@
 llm_roles:
   reasoner: openrouter_reasoner
   validator: aws_validator
+  # Used only by the offline leakage-classification LLM re-label passes
+  # (classify_unclassified_with_llm.py, classify_unclassified_c2w_with_llm.py).
+  patient-context-llm: aws_validator
 
 llm_backends:
   openrouter_reasoner:

@@ -1,0 +1,3 @@
+run_label,input_path,N,c2w_total,kg_supported,kg_supported_of_which_context_driven,mixed,leakage,unclassified,llm_relabelled
+"KG w/o context (Qwen V, no patient context)",qwen_nopc.jsonl,0,16,12,0,0,4,0,3
+"QKG w/ context (Qwen V, with patient context)",qwen_wpc.jsonl,0,38,36,20,1,1,0,3

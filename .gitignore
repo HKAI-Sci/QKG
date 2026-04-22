@@ -15,3 +15,15 @@ prompt*/
 .ipynb_checkpoints/
 
 AGENTS.md
+
+# Paper build artefacts
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.log
+paper/*.out
+
+# Re-include the one HTML template shipped under paper/figures/
+!paper/figures/figure1_qkg_overview_print.html

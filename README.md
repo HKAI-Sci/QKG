@@ -1,48 +1,121 @@
 # Quantum Knowledge Graph (QKG): Modeling Context-Dependent Triplet Validity
 
-QKG is the public codebase for reproducing the paper’s question-guided knowledge graph inference workflow on MedReason-derived medical QA data.
+Code and analysis artefacts for the paper *Quantum Knowledge Graph: Modeling
+Context-Dependent Triplet Validity*. This repository reproduces the
+reasoner–validator pipeline and the statistical analyses reported in the
+paper.
 
-The supported reproduction path is artifact-first:
+The paper PDF is included at [paper/main.pdf](paper/main.pdf).
 
-- load the published QKG Mongo-ready artifacts
-- load upstream PrimeKG relations
-- configure the `reasoner` and `validator` LLMs
-- run `conditionKgTestAgentic.py`
+## What QKG is
 
-This repo does not require rebuilding the historical internal preprocessing pipeline.
+Standard knowledge graphs treat each triplet as globally valid. In many
+settings, whether a relation should count as evidence depends on context.
+QKG replaces the binary truth of a triplet with a triplet-specific function
+of context \(F_{\tau}(C)\); in medicine this is instantiated by augmenting
+KG relations with natural-language applicability conditions
+(`AVOID` / `RECOMMENDED` / `CAUTION` ConstraintItem annotations) and using
+them in a reasoner–validator loop.
 
-## What You Need
+### Headline numbers (N = 2,788 MedReason questions)
 
-There are two groups of required data.
+| Setting | Validator | Accuracy | vs. no-validator baseline | paired McNemar |
+|---|---|---|---|---|
+| No validator (Reasoner only) | —             | 77.51% | — | — |
+| KG validation, no context    | Haiku-4.5     | 78.11% | +0.61 pp | p = 0.040 |
+| QKG validation, with context | Haiku-4.5     | 78.91% | +1.40 pp | p ≈ 3.8×10⁻⁶ |
+| KG validation, no context    | Qwen-3.6-Plus | 83.28% | +5.78 pp | p ≪ 0.001 |
+| QKG validation, with context | Qwen-3.6-Plus | 83.51% | +5.96 pp | p ≪ 0.001 |
 
-### 1. Official Datasets From Other Sources
+Under the matched Haiku-as-validator setting, patient-context matching is
+paired-significant over KG validation without context (+0.79 pp, p = 0.014).
+Under the stronger Qwen validator, the raw with-/no-context paired gap is
+p = 0.73; after dropping suspicious questions (W->C leakage +
+ctx-driven C->W regressions; see Appendix A.3), the gap becomes borderline
+significant (p = 0.050) — consistent with a benchmark-gold ceiling of
+multiple-choice medical QA rather than QKG redundancy.
 
-1. Official `PrimeKg.csv`
-   - upstream dependency used to populate `primeKG.relations`
-   - example: the `PrimeKg.csv` file from the official PrimeKG release
-   - actual Mongo example used by this project: `{relation: "protein_protein", display_relation: "ppi", x_index: 0, x_id: "9796", x_type: "gene/protein", x_name: "PHYHIP", x_source: "NCBI", y_index: 8889, y_id: "56992", y_type: "gene/protein", y_name: "KIF15", y_source: "NCBI"}`
-2. Official UMLS data loaded into MongoDB
-   - required for exact reproduction of the `search_entity` UMLS synonym fallback
-   - example: official UMLS string data from `MRCONSO.RRF`, imported into `umls_test.umls_strings_raw_test`
-   - actual Mongo example used by this project: `{aui: "A26634265", cui: "C0000005", language: "ENG", source: "MSH", source_code: "D012711", source_name: "(131)I-Macroaggregated Albumin", source_term_type: "PEP", string_type: "PF", term_status: "P"}`
+Full per-sample correctness, paired significance tests, and leakage
+classifications are under [paper/data_result/](paper/data_result/) and
+[paper/figures/](paper/figures/).
 
-### 2. Datasets Published By QKG
+## Repo layout
 
-3. `qkg-primekg-entities-with-cui`
-   - published by us at https://huggingface.co/datasets/wangyaobupt/qkg-primekg-entities-with-cui
-   - available as JSONL
-4. `qkg-relation-with-facts`
-   - published by us at https://huggingface.co/datasets/wangyaobupt/qkg-relation-with-facts
-   - available as JSONL
-5. `qkg-medreason-eval.jsonl`
-   - TODO: published by us
-   - evaluation dataset consumed by `conditionKgTestAgentic.py`
+```
+.
+├── README.md
+├── requirements.txt
+├── conditionKgTestAgentic.py             # main evaluation entrypoint
+├── classify_unclassified_with_llm.py     # LLM re-label of W->C UNCLASSIFIED cases
+├── classify_unclassified_c2w_with_llm.py # LLM re-label of C->W UNCLASSIFIED cases
+├── conf/config.example.yaml
+├── lib/                                  # KG tools, patient-context extraction, ReAct agent
+├── f1/                                   # LLM-provider glue (stub; real package is `foundation-one`)
+├── tools/                                # MongoDB import helpers
+├── docs/
+│   └── resource-mongo.md
+├── tests/
+└── paper/
+    ├── main.pdf                          # compiled paper
+    ├── data_result/
+    │   ├── README.md
+    │   ├── significance_tests.py
+    │   ├── significance_results.csv
+    │   ├── top_samples_2788.README.md
+    │   └── per_sample/                   # per-sample correctness + paired joins
+    └── figures/
+        ├── README.md
+        ├── figure*.pdf                   # compiled figures used by the paper
+        ├── generate_*.py                 # figure-building scripts
+        ├── classify_leakage{,_c2w}.py    # regex pass of leakage classifier
+        └── leakage_classification_*.csv  # per-case + summary CSVs (Tables 2 and 3)
+```
+
+## Datasets
+
+Two groups of data are needed. None of them are committed to this repo —
+the paper-scale artefacts are hosted on HuggingFace and upstream sources.
+
+### Published on HuggingFace
+
+1. `qkg-primekg-entities-with-cui` —
+   <https://huggingface.co/datasets/wangyaobupt/qkg-primekg-entities-with-cui>
+   - unique PrimeKG entities annotated with UMLS CUI. Loaded into
+     `primeKG.entities`.
+2. `qkg-relation-with-facts` —
+   <https://huggingface.co/datasets/wangyaobupt/qkg-relation-with-facts>
+   - patient-group-specific `ConstraintItem` annotations (68,651 facts over
+     the four applicability-sensitive relation types described in
+     Section 3.1). Loaded into `primeKG.relation_with_facts`.
+3. `qkg-medreason-eval.jsonl` — *will be published on HuggingFace.*
+   - the curated N = 2,788 KG-grounded MedReason evaluation set consumed
+     by `conditionKgTestAgentic.py`. Provenance and the derivation from
+     the larger 2,789-sample source file are documented in
+     [paper/data_result/top_samples_2788.README.md](paper/data_result/top_samples_2788.README.md).
+
+### Upstream dependencies (fetch from the original sources)
+
+4. `PrimeKg.csv` — from the official PrimeKG release. Loaded into
+   `primeKG.relations`.
+5. UMLS `MRCONSO.RRF` — from the official UMLS release. Loaded into
+   `umls_test.umls_strings_raw_test`.
+
+### Required Mongo collections
+
+| Database  | Collection                  | Source                       |
+|-----------|-----------------------------|------------------------------|
+| `primeKG` | `relations`                 | upstream `PrimeKg.csv`       |
+| `primeKG` | `entities`                  | `qkg-primekg-entities-with-cui` |
+| `primeKG` | `relation_with_facts`       | `qkg-relation-with-facts`    |
+| `umls_test` | `umls_strings_raw_test`   | upstream `MRCONSO.RRF`       |
+
+Field summaries: [docs/resource-mongo.md](docs/resource-mongo.md).
 
 ## Quickstart
 
-### 1. Create an environment
+### 1. Environment
 
-Use Python 3.11.
+Python 3.11.
 
 ```bash
 python -m venv .venv
@@ -50,60 +123,40 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Create local config
+### 2. Config
 
 ```bash
-mkdir -p conf
 cp conf/config.example.yaml conf/config.yaml
 ```
 
-Edit `conf/config.yaml` with:
+Edit `conf/config.yaml` with your MongoDB URIs, artefact file paths, and
+your LLM backends. The three LLM roles are:
 
-- your MongoDB URIs
-- your artifact file paths
-- your `reasoner` LLM backend
-- your `validator` LLM backend
+- `reasoner` — called as the pure-LLM Reasoner in Algorithm 1.
+- `validator` — called inside the KG-grounded Validator loop.
+- `patient-context-llm` — used *only* by the offline leakage-classification
+  re-label passes (`classify_unclassified_*_with_llm.py`). Can point at the
+  same backend as `validator`.
 
-The current config supports two LLM roles:
+Each role can use an OpenRouter / OpenAI-compatible chat API or AWS
+Bedrock — see `conf/config.example.yaml`.
 
-- `reasoner`
-- `validator`
-
-Each can use either:
-
-- OpenRouter / OpenAI-compatible chat API
-- AWS Bedrock
-
-## Required Config
-
-At minimum, set these fields:
+Minimum paths block:
 
 ```yaml
 mongo:
   primekg_uri: mongodb://localhost:27017/primeKG
-  umls_uri: mongodb://localhost:27017/umls_test
+  umls_uri:    mongodb://localhost:27017/umls_test
 
 paths:
-  primekg_csv: /absolute/path/to/PrimeKg.csv
-  umls_mrconso_rrf: /absolute/path/to/MRCONSO.RRF
-  primekg_entities_jsonl: /absolute/path/to/qkg-primekg-entities-with-cui.jsonl
+  primekg_csv:               /absolute/path/to/PrimeKg.csv
+  umls_mrconso_rrf:          /absolute/path/to/MRCONSO.RRF
+  primekg_entities_jsonl:    /absolute/path/to/qkg-primekg-entities-with-cui.jsonl
   relation_with_facts_jsonl: /absolute/path/to/qkg-relation-with-facts.jsonl
-  qa_eval_jsonl: /absolute/path/to/qkg-medreason-eval.jsonl
+  qa_eval_jsonl:             /absolute/path/to/qkg-medreason-eval.jsonl
 ```
 
-
-## Load Data Into MongoDB
-
-The runtime expects four Mongo collections:
-
-- `primeKG.relations`
-- `primeKG.entities`
-- `primeKG.relation_with_facts`
-- `umls_test.umls_strings_raw_test`
-
-Collection purpose and field summaries are in [docs/resource-mongo.md](docs/resource-mongo.md).
-
-### Load QKG JSONL Artifacts
+### 3. Load data into MongoDB
 
 For the `mongoimport` command, export your PrimeKG Mongo URI first:
 
@@ -111,82 +164,58 @@ For the `mongoimport` command, export your PrimeKG Mongo URI first:
 export QKG_PRIMEKG_MONGO_URI="mongodb://localhost:27017/primeKG"
 ```
 
+Published artefacts:
+
 ```bash
-mongoimport --uri "$QKG_PRIMEKG_MONGO_URI" --db primeKG --collection entities --file /path/to/qkg-primekg-entities-with-cui.jsonl
+mongoimport --uri "$QKG_PRIMEKG_MONGO_URI" --db primeKG --collection entities \
+    --file /path/to/qkg-primekg-entities-with-cui.jsonl
 python tools/import_relation_facts.py
 ```
 
-The first command loads the published `qkg-primekg-entities-with-cui.jsonl` artifact into `primeKG.entities`.
-
-The second command loads `paths.relation_with_facts_jsonl` into `primeKG.relation_with_facts`.
-
-Then load the two official upstream dependencies:
+Upstream dependencies:
 
 ```bash
 python tools/import_primekg_relations.py
 python tools/import_umls_strings.py
 ```
 
-These scripts read from:
+These read from `paths.primekg_csv`, `paths.umls_mrconso_rrf`,
+`mongo.primekg_uri`, `mongo.umls_uri`.
 
-- `paths.primekg_csv`
-- `paths.umls_mrconso_rrf`
-- `mongo.primekg_uri`
-- `mongo.umls_uri`
+## Run evaluation
 
-The UMLS import is required for exact reproduction because the public runtime uses `umls_test.umls_strings_raw_test` for UMLS-backed synonym fallback in `search_entity`.
-
-## Run Evaluation
-
-The main public entrypoint is:
+Main entrypoint:
 
 ```bash
-python conditionKgTestAgentic.py
+python conditionKgTestAgentic.py                         # full set, no patient context
+python conditionKgTestAgentic.py --patient-context       # full set, with QKG context matching
+python conditionKgTestAgentic.py --run medqa_839         # single sample, verbose
+python conditionKgTestAgentic.py --run qa_4055 --patient-context
 ```
 
-Useful variants:
+Input is read from `paths.qa_eval_jsonl`. Output goes to the path given by
+`--output /path/to/results.jsonl`; if omitted, the script writes to an
+auto-named file under `output/`.
 
-```bash
-python conditionKgTestAgentic.py --patient-context
-python conditionKgTestAgentic.py --run medqa_839
-python conditionKgTestAgentic.py --run medqa_839 --patient-context
-```
+### Output format
 
-The input evaluation file is read from:
+One JSON object per line. Typical fields:
 
-- `paths.qa_eval_jsonl`
+- `sample_key`, `gold_answer` — stable id and MCQ gold.
+- `agentic_answer`, `agentic_correct`, `agentic_reasoning` — final answer
+  after the Reasoner-Validator loop.
+- `num_turns`, `num_tool_calls`, `tool_calls`, `conversation` — trace of
+  the ReAct loop.
+- `llm_stats`, `elapsed_s` — LLM usage and wall-clock.
+- With `--patient-context`: `patient_context`, `hook_log`,
+  `compression_log`.
+- For the leakage classifier to run on an output log, the record should
+  also include `reasoner_answer`, `reasoner_correct`, `final_answer`,
+  `final_correct`, and `validation_report` (the per-claim
+  `{option, claim, supports, status, evidence}` list emitted by the
+  Validator).
 
-The output file path is controlled by command-line flags:
-
-- `--output /path/to/results.jsonl`
-
-If `--output` is omitted, the script writes to an auto-named file under `output/`.
-
-## Output Format
-
-`conditionKgTestAgentic.py` writes one JSON object per line.
-
-Typical top-level fields include:
-
-- `sample_key`: stable sample identifier from the evaluation dataset
-- `gold_answer`: gold multiple-choice answer
-- `agentic_answer`: final answer chosen by the agentic pipeline
-- `agentic_correct`: whether `agentic_answer` matches `gold_answer`
-- `agentic_reasoning`: final natural-language reasoning returned by the agent
-- `num_turns`: total ReAct turns used in the run
-- `num_tool_calls`: number of KG tool invocations made by the agent
-- `tool_calls`: structured log of tool actions, including turn number and observation length
-- `conversation`: full assistant / observation trace for the run
-- `llm_stats`: aggregated LLM usage stats such as call count and total model time
-- `elapsed_s`: end-to-end wall-clock runtime in seconds
-
-When `--patient-context` is enabled, the output also includes:
-
-- `patient_context`: extracted patient summary used for patient-aware validation
-- `hook_log`: log of post-processing applied to KG results in patient-context mode
-- `compression_log`: summaries of any observation-compression steps used to keep context size manageable
-
-Example structure:
+Example:
 
 ```json
 {
@@ -197,16 +226,85 @@ Example structure:
   "agentic_reasoning": "...",
   "num_turns": 11,
   "num_tool_calls": 10,
-  "tool_calls": [...],
-  "conversation": [...],
-  "llm_stats": {
-    "calls": 22,
-    "wait_s": 0.0,
-    "llm_s": 276.4
-  },
   "patient_context": "...",
-  "hook_log": [...],
-  "compression_log": [...],
+  "llm_stats": {"calls": 22, "wait_s": 0.0, "llm_s": 276.4},
   "elapsed_s": 320.8
 }
 ```
+
+## Reproducing paper analyses
+
+All of the scripts below read from your own validator-run JSONL logs. The
+numbers in `paper/data_result/significance_results.csv`,
+`paper/figures/leakage_classification_*.csv`, and in the paper itself are
+the committed reference.
+
+### Paired McNemar tests (Figure 2, Figure 3, Table 2)
+
+```bash
+# 1) dump per-sample correctness from your four validator-run JSONL logs
+#    into paper/data_result/per_sample/{haiku_wpc,haiku_nopc,qwen_wpc,qwen_nopc}.csv
+#    (see paper/data_result/per_sample/README.md for the one-liner)
+
+# 2) produce paired joins + the significance summary
+python paper/data_result/significance_tests.py
+```
+
+Outputs: `paper/data_result/significance_results.csv`, plus the three
+`paired_*.csv` files under `paper/data_result/per_sample/`.
+
+### Leakage classification (Table 2 and Table 3, Section 5.3 and Appendix A.3)
+
+Two-pass classifier. The regex pass runs locally; the LLM re-label pass
+needs AWS credentials and the `f1` package (see the `patient-context-llm`
+role in `conf/config.yaml`).
+
+```bash
+# regex pass on W->C revisions
+python paper/figures/classify_leakage.py \
+    --no-pc /path/to/qwen_nopc.jsonl \
+    --with-pc /path/to/qwen_wpc.jsonl
+
+# regex pass on C->W regressions
+python paper/figures/classify_leakage_c2w.py \
+    --no-pc /path/to/qwen_nopc.jsonl \
+    --with-pc /path/to/qwen_wpc.jsonl
+
+# LLM re-label pass for the residual UNCLASSIFIED cases (29+27 W->C, 3+3 C->W)
+export QKG_NO_PC_LOG=/path/to/qwen_nopc.jsonl
+export QKG_WITH_PC_LOG=/path/to/qwen_wpc.jsonl
+python classify_unclassified_with_llm.py
+python classify_unclassified_c2w_with_llm.py
+```
+
+Outputs live under `paper/figures/`:
+
+- `leakage_classification_{summary,per_case}.csv` — regex-only output.
+- `leakage_classification_{summary,per_case}_llm.csv` — merged regex+LLM,
+  the final W->C numbers used in Tables 2 and 3.
+- `leakage_classification_c2w_{summary,per_case}.csv` — the final C->W
+  numbers used in Table 3.
+
+### Figures
+
+```bash
+python paper/figures/generate_main_patient_results_plot.py
+python paper/figures/generate_qwen_validator_results_plot.py
+python paper/figures/generate_case_studies.py
+python paper/figures/combine_case_studies.py
+```
+
+Figure 1 is rendered via Chrome; see
+[paper/figures/README.md](paper/figures/README.md) for the command line.
+
+## Citation
+
+Paper: *Quantum Knowledge Graph: Modeling Context-Dependent Triplet Validity*
+(Wang, Geng, Yan). See [paper/main.pdf](paper/main.pdf) for the full text
+and bibliography.
+
+## License
+
+See the upstream repository for license terms; datasets linked on
+HuggingFace carry their own license (PrimeKG under the original PrimeKG
+license; UMLS is subject to the UMLS Metathesaurus License).

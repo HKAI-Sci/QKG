@@ -1,0 +1,8 @@
+comparison,N_paired,acc_A_pct,acc_B_pct,delta_pp,b_A_correct_B_wrong,c_A_wrong_B_correct,p_exact_two_sided,p_cc_chi2
+A. No validator vs. KG w/o context (Haiku V),2787,77.5,78.11,0.61,22,39,0.03962,0.0405
+B. No validator vs. QKG w/ context (Haiku V),2788,77.51,78.91,1.4,16,55,3.753e-06,6.49e-06
+C. KG w/o context vs. QKG w/ context (Haiku V),2787,78.11,78.9,0.79,26,48,0.01408,0.01464
+D. No validator vs. KG w/o context (Qwen V),2787,77.5,83.28,5.78,16,177,1.635e-35,0
+E. No validator vs. QKG w/ context (Qwen V),2783,77.54,83.51,5.96,38,204,1.186e-28,0
+F. KG w/o context vs. QKG w/ context (Qwen V),2782,83.32,83.5,0.18,65,70,0.7308,0.7306
+"G. KG w/o vs. QKG w/ (Qwen V, leakage-adjusted)",2665,83.3,84.02,0.71,33,52,0.05025,0.05089

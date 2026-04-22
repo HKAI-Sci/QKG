@@ -1,0 +1,4 @@
+setting,reasoner,validator,patient_context,reasoner_acc,final_acc,improved,regressed,delta_pp
+QKG w/ context,Haiku-4.5,Qwen-3.6-Plus,with patient,77.5,83.5,204,38,6.0
+KG w/o context,Haiku-4.5,Qwen-3.6-Plus,no patient,77.5,83.3,177,16,5.8
+No validator,Haiku-4.5,None,none,77.5,77.5,0,0,0.0

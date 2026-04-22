@@ -1,0 +1,3 @@
+run_label,input_path,N,reasoner_correct,final_correct,reasoner_acc,raw_final_acc,adj_final_acc,delta_raw_pp,delta_adj_pp,w2c_total,kg_supported,kg_supported_of_which_context_driven,mixed,leakage,unclassified,c2w
+"KG w/o context (Qwen V, no patient context)",qwen_nopc.jsonl,2787,2160,2321,0.775,0.8328,0.8303,5.78,5.53,177,90,0,17,41,29,16
+"QKG w/ context (Qwen V, with patient context)",qwen_wpc.jsonl,2783,2158,2324,0.7754,0.8351,0.8328,5.96,5.74,204,114,27,26,37,27,38

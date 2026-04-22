@@ -1,0 +1,55 @@
+run_label,sample_key,reasoner_answer,final_answer,gold_answer,regex_label,of_which_context_driven,llm_label,llm_reasoning,final_label,label_source
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_690,E,G,E,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",pubmedqa_artificial_1635,A,B,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_3930,B,A,B,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The evidence explicitly states 'While the KG summary did not explicitly list hypokalemia' and then asserts the contradiction based on 'well-established class effect of loop diuretics' and the validator's own clinical reasoning, not on a KG-grounded edge or annotation.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",qa_1483,A,B,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_6885,A,B,A,UNCLASSIFIED,False,LIKELY_LEAKAGE,"The evidence rests entirely on the validator's clinical knowledge about beta-blocker masking of autonomic symptoms and the pathophysiology of hypoglycemia, with no citation to any KG entity, relation, or patient-context annotation.",LIKELY_LEAKAGE,llm
+"KG w/o context (Qwen V, no patient context)",qa_6098,B,A,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medqa_7187,D,A,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_5412,D,C,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",medmcqa_2575,C,A,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_9224,D,A,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_3638,C,D,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",qa_7669,A,B,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",MedXpertQA_14,D,A,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"KG w/o context (Qwen V, no patient context)",huatuo_8785,C,A,C,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"KG w/o context (Qwen V, no patient context)",qa_6573,A,D,A,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"The contradiction rests entirely on specific KG relations (check_relation showing contraindication, get_entity_relations showing absence of indication) and explicit KG-grounded claims about Propranolol's lack of indication for anxiety disorders, with no appeal to external clinical knowledge or guidelines.",LIKELY_KG_SUPPORTED,llm
+"KG w/o context (Qwen V, no patient context)",qa_8222,B,A,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8440,B,A,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8443,C,A,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_4881,A,C,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1206,C,D,C,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2226,C,D,C,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"The contradiction rests entirely on specific KG entities (Danazol 14528, SERPING1) and their absence of relevant relations (drug_protein links to C1-esterase inhibitor, indications for hereditary angioedema), which are graph-grounded determinations that correctly eliminate an inapplicable option.",LIKELY_KG_SUPPORTED,llm
+"QKG w/ context (Qwen V, with patient context)",medmcqa_6730,A,B,A,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6106,E,A,E,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_5681,B,A,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3445,B,C,B,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2867,B,C,B,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",MedXpertQA_14,D,H,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3589,B,A,B,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3693,D,A,D,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3678,D,A,D,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3972,D,B,D,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8002,B,D,B,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1981,D,B,D,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_1558,A,D,A,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_354,D,B,D,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_3930,B,A,B,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,The evidence explicitly cites 'KG and clinical pharmacology confirm that bumetanide causes hypokalemia' — a direct knowledge-graph entity/relation (drug-adverse-effect edge) that contradicts the gold answer's premise of hyperkalemia.,LIKELY_KG_SUPPORTED,llm
+"QKG w/ context (Qwen V, with patient context)",qa_3203,C,B,C,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_2901,B,A,B,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_4803,B,D,B,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8918,B,A,B,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",pubmedqa_artificial_1635,A,B,A,LIKELY_LEAKAGE,False,,,LIKELY_LEAKAGE,regex
+"QKG w/ context (Qwen V, with patient context)",qa_5412,D,C,D,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_7669,A,B,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_8961,A,D,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6885,A,B,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_4322,D,A,D,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_687,C,B,C,UNCLASSIFIED,False,LIKELY_KG_SUPPORTED,"The contradiction rests explicitly on a KG annotation stating clonidine's first-line status for Tourette syndrome in pediatrics, which is a specific knowledge-graph entity/relation claim that directly contradicts the gold option's characterization of clonidine as second-line.",LIKELY_KG_SUPPORTED,llm
+"QKG w/ context (Qwen V, with patient context)",medqa_978,C,B,C,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",pubmedqa_81,A,B,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_6941,B,D,B,MIXED,False,,,MIXED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_7016,B,A,B,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",medqa_4425,C,A,C,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_7776,C,B,C,LIKELY_KG_SUPPORTED,True,,,LIKELY_KG_SUPPORTED,regex
+"QKG w/ context (Qwen V, with patient context)",qa_6399,A,B,A,LIKELY_KG_SUPPORTED,False,,,LIKELY_KG_SUPPORTED,regex
