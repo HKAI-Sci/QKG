@@ -5,7 +5,7 @@ Context-Dependent Triplet Validity*. This repository reproduces the
 reasoner–validator pipeline and the statistical analyses reported in the
 paper.
 
-The paper PDF is included at [paper/main.pdf](paper/main.pdf).
+Paper link: to be available on arXiv soon.
 
 ## What QKG is
 
@@ -56,7 +56,6 @@ classifications are under [paper/data_result/](paper/data_result/) and
 │   └── resource-mongo.md
 ├── tests/
 └── paper/
-    ├── main.pdf                          # compiled paper
     ├── data_result/
     │   ├── README.md
     │   ├── significance_tests.py
@@ -301,8 +300,7 @@ Figure 1 is rendered via Chrome; see
 ## Citation
 
 Paper: *Quantum Knowledge Graph: Modeling Context-Dependent Triplet Validity*
-(Wang, Geng, Yan). See [paper/main.pdf](paper/main.pdf) for the full text
-and bibliography.
+(Wang, Geng, Yan). The canonical paper link will be available on arXiv soon.
 
 ## License
 
