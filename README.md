@@ -7,11 +7,7 @@ paper.
 
 Paper link: to be available on arXiv soon.
 
-## Graphical abstract
-
-![Graphical abstract](paper/figures/cover_page.png)
-
-## What QKG is
+## QKG at a glance
 
 Standard knowledge graphs treat each triplet as globally valid. In many
 settings, whether a relation should count as evidence depends on context.
@@ -21,96 +17,13 @@ KG relations with natural-language applicability conditions
 (`AVOID` / `RECOMMENDED` / `CAUTION` ConstraintItem annotations) and using
 them in a reasoner–validator loop.
 
-### Headline numbers (N = 2,788 MedReason questions)
+![Graphical abstract](paper/figures/cover_page.png)
 
-| Setting | Validator | Accuracy | vs. no-validator baseline | paired McNemar |
-|---|---|---|---|---|
-| No validator (Reasoner only) | —             | 77.51% | — | — |
-| KG validation, no context    | Haiku-4.5     | 78.11% | +0.61 pp | p = 0.040 |
-| QKG validation, with context | Haiku-4.5     | 78.91% | +1.40 pp | p ≈ 3.8×10⁻⁶ |
-| KG validation, no context    | Qwen-3.6-Plus | 83.28% | +5.78 pp | p ≪ 0.001 |
-| QKG validation, with context | Qwen-3.6-Plus | 83.51% | +5.96 pp | p ≪ 0.001 |
-
-Under the matched Haiku-as-validator setting, patient-context matching is
-paired-significant over KG validation without context (+0.79 pp, p = 0.014).
-Under the stronger Qwen validator, the raw with-/no-context paired gap is
-p = 0.73; after dropping suspicious questions (W->C leakage +
-ctx-driven C->W regressions; see Appendix A.3), the gap becomes borderline
-significant (p = 0.050) — consistent with a benchmark-gold ceiling of
-multiple-choice medical QA rather than QKG redundancy.
-
-Full per-sample correctness, paired significance tests, and leakage
-classifications are under [paper/data_result/](paper/data_result/) and
-[paper/figures/](paper/figures/).
-
-## Repo layout
-
-```
-.
-├── README.md
-├── requirements.txt
-├── conditionKgTestAgentic.py             # main evaluation entrypoint
-├── classify_unclassified_with_llm.py     # LLM re-label of W->C UNCLASSIFIED cases
-├── classify_unclassified_c2w_with_llm.py # LLM re-label of C->W UNCLASSIFIED cases
-├── conf/config.example.yaml
-├── lib/                                  # KG tools, patient-context extraction, ReAct agent
-├── f1/                                   # LLM-provider glue (stub; real package is `foundation-one`)
-├── tools/                                # MongoDB import helpers
-├── docs/
-│   └── resource-mongo.md
-├── tests/
-└── paper/
-    ├── data_result/
-    │   ├── README.md
-    │   ├── significance_tests.py
-    │   ├── significance_results.csv
-    │   └── per_sample/                   # per-sample correctness + paired joins
-    └── figures/
-        ├── README.md
-        ├── figure*.pdf                   # compiled figures used by the paper
-        ├── generate_*.py                 # figure-building scripts
-        ├── classify_leakage{,_c2w}.py    # regex pass of leakage classifier
-        └── leakage_classification_*.csv  # per-case + summary CSVs (Tables 2 and 3)
-```
-
-## Datasets
-
-Two groups of data are needed. None of them are committed to this repo —
-the paper-scale artefacts are hosted on HuggingFace and upstream sources.
-
-### Published on HuggingFace
-
-1. `qkg-primekg-entities-with-cui` —
-   <https://huggingface.co/datasets/HKAI-Sci/qkg-primekg-entities-with-cui>
-   - unique PrimeKG entities annotated with UMLS CUI. Loaded into
-     `primeKG.entities`.
-2. `qkg-relation-with-facts` —
-   <https://huggingface.co/datasets/HKAI-Sci/qkg-relation-with-facts>
-   - patient-group-specific `ConstraintItem` annotations (68,651 facts over
-     the four applicability-sensitive relation types described in
-     Section 3.1). Loaded into `primeKG.relation_with_facts`.
-3. `qkg_qa_dataset` —
-   <https://huggingface.co/datasets/HKAI-Sci/qkg_qa_dataset>
-   - the curated N = 2,788 KG-grounded MedReason evaluation set consumed
-     by `conditionKgTestAgentic.py`.
-
-### Upstream dependencies (fetch from the original sources)
-
-4. `PrimeKg.csv` — from the official PrimeKG release. Loaded into
-   `primeKG.relations`.
-5. UMLS `MRCONSO.RRF` — from the official UMLS release. Loaded into
-   `umls_test.umls_strings_raw_test`.
-
-### Required Mongo collections
-
-| Database  | Collection                  | Source                       |
-|-----------|-----------------------------|------------------------------|
-| `primeKG` | `relations`                 | upstream `PrimeKg.csv`       |
-| `primeKG` | `entities`                  | `qkg-primekg-entities-with-cui` |
-| `primeKG` | `relation_with_facts`       | `qkg-relation-with-facts`    |
-| `umls_test` | `umls_strings_raw_test`   | upstream `MRCONSO.RRF`       |
-
-Field summaries: [docs/resource-mongo.md](docs/resource-mongo.md).
+On the paper's N = 2,788 MedReason evaluation set, QKG-backed validation
+improves over both the no-validator baseline and KG validation without
+context matching. Full per-sample correctness, paired significance tests,
+and leakage classifications are under [paper/data_result/](paper/data_result/)
+and [paper/figures/](paper/figures/).
 
 ## Quickstart
 
@@ -235,7 +148,7 @@ Example:
 }
 ```
 
-## Reproducing paper analyses
+## Reproduce the paper
 
 All of the scripts below read from your own validator-run JSONL logs. The
 numbers in `paper/data_result/significance_results.csv`,
@@ -300,6 +213,44 @@ python paper/figures/combine_case_studies.py
 
 Figure 1 is rendered via Chrome; see
 [paper/figures/README.md](paper/figures/README.md) for the command line.
+
+## Datasets
+
+The paper-scale artefacts are hosted on HuggingFace and upstream sources.
+
+### Published on HuggingFace
+
+1. `qkg-primekg-entities-with-cui` —
+   <https://huggingface.co/datasets/HKAI-Sci/qkg-primekg-entities-with-cui>
+   - unique PrimeKG entities annotated with UMLS CUI. Loaded into
+     `primeKG.entities`.
+2. `qkg-relation-with-facts` —
+   <https://huggingface.co/datasets/HKAI-Sci/qkg-relation-with-facts>
+   - patient-group-specific `ConstraintItem` annotations (68,651 facts over
+     the four applicability-sensitive relation types described in
+     Section 3.1). Loaded into `primeKG.relation_with_facts`.
+3. `qkg_qa_dataset` —
+   <https://huggingface.co/datasets/HKAI-Sci/qkg_qa_dataset>
+   - the curated N = 2,788 KG-grounded MedReason evaluation set consumed
+     by `conditionKgTestAgentic.py`.
+
+### Upstream dependencies
+
+4. `PrimeKg.csv` — from the official PrimeKG release. Loaded into
+   `primeKG.relations`.
+5. UMLS `MRCONSO.RRF` — from the official UMLS release. Loaded into
+   `umls_test.umls_strings_raw_test`.
+
+### Required Mongo collections
+
+| Database  | Collection                  | Source                          |
+|-----------|-----------------------------|---------------------------------|
+| `primeKG` | `relations`                 | upstream `PrimeKg.csv`          |
+| `primeKG` | `entities`                  | `qkg-primekg-entities-with-cui` |
+| `primeKG` | `relation_with_facts`       | `qkg-relation-with-facts`       |
+| `umls_test` | `umls_strings_raw_test`   | upstream `MRCONSO.RRF`          |
+
+Field summaries: [docs/resource-mongo.md](docs/resource-mongo.md).
 
 ## Citation
 
