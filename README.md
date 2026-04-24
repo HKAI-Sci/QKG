@@ -79,15 +79,16 @@ the paper-scale artefacts are hosted on HuggingFace and upstream sources.
 ### Published on HuggingFace
 
 1. `qkg-primekg-entities-with-cui` —
-   <https://huggingface.co/datasets/wangyaobupt/qkg-primekg-entities-with-cui>
+   <https://huggingface.co/datasets/HKAI-Sci/qkg-primekg-entities-with-cui>
    - unique PrimeKG entities annotated with UMLS CUI. Loaded into
      `primeKG.entities`.
 2. `qkg-relation-with-facts` —
-   <https://huggingface.co/datasets/wangyaobupt/qkg-relation-with-facts>
+   <https://huggingface.co/datasets/HKAI-Sci/qkg-relation-with-facts>
    - patient-group-specific `ConstraintItem` annotations (68,651 facts over
      the four applicability-sensitive relation types described in
      Section 3.1). Loaded into `primeKG.relation_with_facts`.
-3. `qkg-medreason-eval.jsonl` — *will be published on HuggingFace.*
+3. `qkg_qa_dataset` —
+   <https://huggingface.co/datasets/HKAI-Sci/qkg_qa_dataset>
    - the curated N = 2,788 KG-grounded MedReason evaluation set consumed
      by `conditionKgTestAgentic.py`. Provenance and the derivation from
      the larger 2,789-sample source file are documented in
