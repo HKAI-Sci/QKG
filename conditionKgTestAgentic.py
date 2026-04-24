@@ -36,7 +36,7 @@ import argparse
 apply_optional_aws_env(f1_config)
 
 # INPUT_FILE = "output/v3_bfs_wrong_v1_correct.jsonl"
-INPUT_FILE = get_optional_path_config("qa_eval_jsonl", "data/top_2875_path_samples_all_v4.jsonl")
+INPUT_FILE = get_optional_path_config("qa_eval_jsonl", "data/top_samples_filtered.jsonl")
 
 
 SAMPLE_SIZE = 3000

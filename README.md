@@ -133,8 +133,10 @@ your LLM backends. The three LLM roles are:
 - `reasoner` — called as the pure-LLM Reasoner in Algorithm 1.
 - `validator` — called inside the KG-grounded Validator loop.
 - `patient-context-llm` — used *only* by the offline leakage-classification
-  re-label passes (`classify_unclassified_*_with_llm.py`). Can point at the
-  same backend as `validator`.
+  re-label passes (`classify_unclassified_*_with_llm.py`) for Appendix A.3.
+  It is not used by `conditionKgTestAgentic.py`, so the main pipeline can run
+  without configuring this role. If you do want the re-label scripts, it can
+  point at the same backend as `validator`.
 
 Each role can use an OpenRouter / OpenAI-compatible chat API or AWS
 Bedrock — see `conf/config.example.yaml`.
@@ -150,8 +152,8 @@ paths:
   primekg_csv:               /absolute/path/to/PrimeKg.csv
   umls_mrconso_rrf:          /absolute/path/to/MRCONSO.RRF
   primekg_entities_jsonl:    /absolute/path/to/qkg-primekg-entities-with-cui.jsonl
-  relation_with_facts_jsonl: /absolute/path/to/qkg-relation-with-facts.jsonl
-  qa_eval_jsonl:             /absolute/path/to/qkg-medreason-eval.jsonl
+  relation_with_facts_jsonl: /absolute/path/to/relation_facts_all_cleaned_no_refs.jsonl
+  qa_eval_jsonl:             /absolute/path/to/top_samples_filtered.jsonl
 ```
 
 ### 3. Load data into MongoDB
@@ -254,8 +256,9 @@ Outputs: `paper/data_result/significance_results.csv`, plus the three
 ### Leakage classification (Table 2 and Table 3, Section 5.3 and Appendix A.3)
 
 Two-pass classifier. The regex pass runs locally; the LLM re-label pass
-needs AWS credentials and the `f1` package (see the `patient-context-llm`
-role in `conf/config.yaml`).
+needs AWS credentials and the `f1` package (see the optional
+`patient-context-llm` role in `conf/config.yaml`). This role is only for the
+Appendix A.3 re-label scripts, not for the main pipeline.
 
 ```bash
 # regex pass on W->C revisions

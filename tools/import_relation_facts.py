@@ -1,4 +1,4 @@
-"""Import relation_facts_all_cleaned.jsonl into MongoDB collection relation_with_facts."""
+"""Import relation_facts_all_cleaned_no_refs.jsonl into MongoDB collection relation_with_facts."""
 import json
 from pymongo import MongoClient, IndexModel
 from lib.runtime_config import get_mongo_uri, get_path_config

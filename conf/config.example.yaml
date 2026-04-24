@@ -1,8 +1,10 @@
 llm_roles:
   reasoner: openrouter_reasoner
   validator: aws_validator
-  # Used only by the offline leakage-classification LLM re-label passes
+  # Optional. Used only by the Appendix A.3 offline LLM re-label passes
   # (classify_unclassified_with_llm.py, classify_unclassified_c2w_with_llm.py).
+  # It is NOT used by the main agentic pipeline, so you can run the pipeline
+  # without configuring this role.
   patient-context-llm: aws_validator
 
 llm_backends:
@@ -26,6 +28,6 @@ mongo:
 paths:
   primekg_csv: /absolute/path/to/PrimeKg.csv
   umls_mrconso_rrf: /absolute/path/to/MRCONSO.RRF
-  relation_with_facts_jsonl: /absolute/path/to/relation_facts_all_cleaned.jsonl
+  relation_with_facts_jsonl: /absolute/path/to/relation_facts_all_cleaned_no_refs.jsonl
   primekg_entities_jsonl: /absolute/path/to/qkg-primekg-entities-with-cui.jsonl
-  qa_eval_jsonl: /absolute/path/to/top_2875_path_samples_all_v4.jsonl
+  qa_eval_jsonl: /absolute/path/to/top_samples_filtered.jsonl
