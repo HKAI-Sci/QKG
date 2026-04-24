@@ -14,6 +14,7 @@ class PatientContextAnalyzer:
             llm_call: async (list[Message]) -> str
         """
         self.llm_call = llm_call
+        self.call_stats = {"extract": 0, "analyze": 0, "analyze_drug_disease": 0}
 
     async def extract(self, question: str) -> str:
         """Extract patient characteristics from a medical question."""
@@ -25,6 +26,7 @@ class PatientContextAnalyzer:
             )),
             Message(role="user", content=question),
         ]
+        self.call_stats["extract"] += 1
         return await self.llm_call(messages)
 
     _BATCH_SIZE = 15  # max relations per LLM analysis call
@@ -46,6 +48,7 @@ class PatientContextAnalyzer:
             return relations
 
         # Run all batches concurrently (per-agent semaphore controls LLM parallelism)
+        self.call_stats["analyze"] += 1
         batch_coros = []
         for batch_start in range(0, len(enriched), self._BATCH_SIZE):
             batch = enriched[batch_start:batch_start + self._BATCH_SIZE]
@@ -100,6 +103,7 @@ class PatientContextAnalyzer:
             return relations
 
         # Run all batches concurrently (per-agent semaphore controls LLM parallelism)
+        self.call_stats["analyze_drug_disease"] += 1
         batch_coros = []
         for batch_start in range(0, len(enriched), self._BATCH_SIZE):
             batch = enriched[batch_start:batch_start + self._BATCH_SIZE]
