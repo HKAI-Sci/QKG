@@ -7,6 +7,10 @@ paper.
 
 Paper link: to be available on arXiv soon.
 
+## Graphical abstract
+
+![Graphical abstract](paper/figures/cover_page.png)
+
 ## What QKG is
 
 Standard knowledge graphs treat each triplet as globally valid. In many
