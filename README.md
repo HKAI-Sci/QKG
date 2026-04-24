@@ -61,7 +61,6 @@ classifications are under [paper/data_result/](paper/data_result/) and
     │   ├── README.md
     │   ├── significance_tests.py
     │   ├── significance_results.csv
-    │   ├── top_samples_2788.README.md
     │   └── per_sample/                   # per-sample correctness + paired joins
     └── figures/
         ├── README.md
@@ -90,9 +89,7 @@ the paper-scale artefacts are hosted on HuggingFace and upstream sources.
 3. `qkg_qa_dataset` —
    <https://huggingface.co/datasets/HKAI-Sci/qkg_qa_dataset>
    - the curated N = 2,788 KG-grounded MedReason evaluation set consumed
-     by `conditionKgTestAgentic.py`. Provenance and the derivation from
-     the larger 2,789-sample source file are documented in
-     [paper/data_result/top_samples_2788.README.md](paper/data_result/top_samples_2788.README.md).
+     by `conditionKgTestAgentic.py`.
 
 ### Upstream dependencies (fetch from the original sources)
 

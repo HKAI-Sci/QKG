@@ -11,9 +11,6 @@ Method (Section 3.3, `Statistical Testing`).
   C->W ctx-driven KG-supported regressions.
 - `significance_results.csv` — machine-readable summary of all paired
   McNemar tests cited in the paper.
-- `top_samples_2788.README.md` — documents how the N=2,788 curated
-  evaluation set is derived from the larger 2,789-sample source file
-  (one reserved case-study sample `medqa_839` is held out).
 - `per_sample/` — per-sample correctness CSVs and their paired joins.
   See `per_sample/README.md`.
 
