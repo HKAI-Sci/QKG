@@ -29,7 +29,7 @@ and [paper/figures/](paper/figures/).
 
 ### 1. Environment
 
-Python 3.11. Either **conda** or **venv** works.
+Python 3.11. Either **conda** works.
 
 **conda**
 
@@ -39,13 +39,7 @@ conda activate qkg
 pip install -r requirements.txt
 ```
 
-**venv**
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
 
 ### 2. Config
 
