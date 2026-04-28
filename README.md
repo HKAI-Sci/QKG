@@ -25,6 +25,44 @@ context matching. Full per-sample correctness, paired significance tests,
 and leakage classifications are under [paper/data_result/](paper/data_result/)
 and [paper/figures/](paper/figures/).
 
+## Datasets
+
+The paper-scale artefacts are hosted on HuggingFace and upstream sources.
+
+### Published on HuggingFace
+
+1. `qkg-primekg-entities-with-cui` —
+   <https://huggingface.co/datasets/HKAI-Sci/qkg-primekg-entities-with-cui>
+   - unique PrimeKG entities annotated with UMLS CUI. Loaded into
+     `primeKG.entities`.
+2. `qkg-relation-with-facts` —
+   <https://huggingface.co/datasets/HKAI-Sci/qkg-relation-with-facts>
+   - patient-group-specific `ConstraintItem` annotations (68,651 facts over
+     the four applicability-sensitive relation types described in
+     Section 3.1). Loaded into `primeKG.relation_with_facts`.
+3. `qkg_qa_dataset` —
+   <https://huggingface.co/datasets/HKAI-Sci/qkg_qa_dataset>
+   - the curated N = 2,788 KG-grounded MedReason evaluation set consumed
+     by `conditionKgTestAgentic.py`.
+
+### Upstream dependencies
+
+4. `PrimeKg.csv` — from the official PrimeKG release. Loaded into
+   `primeKG.relations`.
+5. UMLS `MRCONSO.RRF` — from the official UMLS release. Loaded into
+   `umls_test.umls_strings_raw_test`.
+
+### Required Mongo collections
+
+| Database  | Collection                  | Source                          |
+|-----------|-----------------------------|---------------------------------|
+| `primeKG` | `relations`                 | upstream `PrimeKg.csv`          |
+| `primeKG` | `entities`                  | `qkg-primekg-entities-with-cui` |
+| `primeKG` | `relation_with_facts`       | `qkg-relation-with-facts`       |
+| `umls_test` | `umls_strings_raw_test`   | upstream `MRCONSO.RRF`          |
+
+Field summaries: [docs/resource-mongo.md](docs/resource-mongo.md).
+
 ## Quickstart
 
 ### 1. Environment
@@ -217,44 +255,6 @@ python paper/figures/combine_case_studies.py
 
 Figure 1 is rendered via Chrome; see
 [paper/figures/README.md](paper/figures/README.md) for the command line.
-
-## Datasets
-
-The paper-scale artefacts are hosted on HuggingFace and upstream sources.
-
-### Published on HuggingFace
-
-1. `qkg-primekg-entities-with-cui` —
-   <https://huggingface.co/datasets/HKAI-Sci/qkg-primekg-entities-with-cui>
-   - unique PrimeKG entities annotated with UMLS CUI. Loaded into
-     `primeKG.entities`.
-2. `qkg-relation-with-facts` —
-   <https://huggingface.co/datasets/HKAI-Sci/qkg-relation-with-facts>
-   - patient-group-specific `ConstraintItem` annotations (68,651 facts over
-     the four applicability-sensitive relation types described in
-     Section 3.1). Loaded into `primeKG.relation_with_facts`.
-3. `qkg_qa_dataset` —
-   <https://huggingface.co/datasets/HKAI-Sci/qkg_qa_dataset>
-   - the curated N = 2,788 KG-grounded MedReason evaluation set consumed
-     by `conditionKgTestAgentic.py`.
-
-### Upstream dependencies
-
-4. `PrimeKg.csv` — from the official PrimeKG release. Loaded into
-   `primeKG.relations`.
-5. UMLS `MRCONSO.RRF` — from the official UMLS release. Loaded into
-   `umls_test.umls_strings_raw_test`.
-
-### Required Mongo collections
-
-| Database  | Collection                  | Source                          |
-|-----------|-----------------------------|---------------------------------|
-| `primeKG` | `relations`                 | upstream `PrimeKg.csv`          |
-| `primeKG` | `entities`                  | `qkg-primekg-entities-with-cui` |
-| `primeKG` | `relation_with_facts`       | `qkg-relation-with-facts`       |
-| `umls_test` | `umls_strings_raw_test`   | upstream `MRCONSO.RRF`          |
-
-Field summaries: [docs/resource-mongo.md](docs/resource-mongo.md).
 
 ## Citation
 
