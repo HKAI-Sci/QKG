@@ -52,22 +52,11 @@ The paper-scale artefacts are hosted on HuggingFace and upstream sources.
 5. UMLS `MRCONSO.RRF` — from the official UMLS release. Loaded into
    `umls_test.umls_strings_raw_test`.
 
-### Required Mongo collections
-
-| Database  | Collection                  | Source                          |
-|-----------|-----------------------------|---------------------------------|
-| `primeKG` | `relations`                 | upstream `PrimeKg.csv`          |
-| `primeKG` | `entities`                  | `qkg-primekg-entities-with-cui` |
-| `primeKG` | `relation_with_facts`       | `qkg-relation-with-facts`       |
-| `umls_test` | `umls_strings_raw_test`   | upstream `MRCONSO.RRF`          |
-
-Field summaries: [docs/resource-mongo.md](docs/resource-mongo.md).
-
 ## Quickstart
 
 ### 1. Environment
 
-Python 3.11. Either **conda** works.
+Python 3.11. **conda** works.
 
 **conda**
 
@@ -115,6 +104,17 @@ paths:
 ```
 
 ### 3. Load data into MongoDB
+
+#### Required Mongo collections
+
+| Database  | Collection                  | Source                          |
+|-----------|-----------------------------|---------------------------------|
+| `primeKG` | `relations`                 | upstream `PrimeKg.csv`          |
+| `primeKG` | `entities`                  | `qkg-primekg-entities-with-cui` |
+| `primeKG` | `relation_with_facts`       | `qkg-relation-with-facts`       |
+| `umls_test` | `umls_strings_raw_test`   | upstream `MRCONSO.RRF`          |
+
+Field summaries: [docs/resource-mongo.md](docs/resource-mongo.md).
 
 For the `mongoimport` command, export your PrimeKG Mongo URI first:
 
